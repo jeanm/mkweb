@@ -1,0 +1,12 @@
+[package]
+name = "mkweb"
+version = "0.1.0"
+authors = ["Jean Maillard <jean@maillard.it>"]
+
+[dependencies]
+handlebars = { version = "0.24", features = ["serde_type"] }
+pandoc = "0.5.1"
+serde = "0.8"
+serde_derive = "0.8"
+toml = { version = "0.2", default-features = false, features = ["serde"] }
+walkdir = "1"
