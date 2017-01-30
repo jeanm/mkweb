@@ -54,7 +54,6 @@ impl Renderer {
         })
     }
 
-    // TODO only render files after checking timestamps
     pub fn render(&self) -> Result<()> {
         self.copy_assets()?;
         let walk = WalkDir::new(&self.root_path);
@@ -97,7 +96,6 @@ impl Renderer {
         Ok(())
     }
 
-    // TODO only copy changed assets
     fn copy_assets(&self) -> Result<()> {
         let walk = WalkDir::new(&self.assets_path);
         for entry in walk.into_iter().filter_map(|e| e.ok()) {
